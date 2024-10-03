@@ -19,8 +19,6 @@ const fcm = new FCM(serverKey);
 ///////// RealestateApi
 exports.RealestateApi = catchAsyncErrors(async (req, res, next) => {
   const { email, name, mobile, inquiry_id, subject, details, property_id, recv_date, lookinf_for } = req.body;
-
-
   const lead = await Lead.create({
     full_name: name,
     email_id: email,
